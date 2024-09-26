@@ -1,5 +1,16 @@
 #!/usr/bin/bash
 rm -rf /anaconda/envs/*
+
+# Check if the folder exists
+if [ -d "/deleteme" ]; then
+  # Delete everything in the folder with force
+  rm -rf "/deleteme/*"
+  echo "Deleted contents of /deleteme"
+else
+  echo "/deleteme does not exist"
+fi
+
+
 /opt/conda/condabin/conda create -y -q --prefix /anaconda/envs/jupyter_env --channel=conda-forge  python=3.8 jupyter_server
 /anaconda/envs/jupyter_env/bin/pip install \
     azureml-core==1.56.0 \

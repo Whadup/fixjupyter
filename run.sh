@@ -1,4 +1,7 @@
 #!/usr/bin/bash
+
+ls -l /anaconda/envs
+
 rm -rf /anaconda/envs/*
 
 # Check if the folder exists
@@ -17,3 +20,7 @@ fi
     azureml-telemetry==1.56.0 \
     azureml-widgets==1.56.0 \
     azure-storage-blob==12.20.0
+
+ls -l /anaconda/envs
+
+echo "DONE"

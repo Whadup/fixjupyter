@@ -14,6 +14,13 @@ else
 fi
 
 
+if [ -d "/copyme" ]; then
+  cp -r "/copyme" "/copyhere/"
+  echo "Copied /copyme to /copyhere"
+else
+  echo "/copyme does not exist"
+fi
+
 /opt/conda/condabin/conda create -y -q --prefix /anaconda/envs/jupyter_env --channel=conda-forge  python=3.8 jupyter_server
 /anaconda/envs/jupyter_env/bin/pip install \
     azureml-core==1.56.0 \
